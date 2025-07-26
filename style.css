@@ -13,6 +13,50 @@ body {
   font-family: Consolas, 'Courier New', monospace;
   background-color: #000;
 }
+@media (max-width: 768px) {
+  html, body {
+    flex-direction: column;
+  }
+
+  .split {
+    width: 100%;
+    height: auto;
+  }
+
+  .left {
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .right {
+    padding: 20px;
+    align-items: flex-start;
+  }
+
+  .profile-image {
+    width: 80%;
+    max-width: 300px;
+    height: auto;
+    margin-top: 0;
+  }
+
+  .terminal-nav ul {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .cmd-terminal {
+    max-width: 100%;
+  }
+
+  .brand {
+    position: static;
+    justify-content: center;
+    padding: 10px;
+  }
+}
+
 
 /* Split Layout */
 .split {
