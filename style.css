@@ -5,82 +5,30 @@
   box-sizing: border-box;
 }
 
-html,
-body {
-  height: 100%;
+html, body {
   width: 100%;
-  display: flex;
+  height: 100%;
   font-family: Consolas, 'Courier New', monospace;
   background-color: #000;
-}
-@media (max-width: 768px) {
-  html, body {
-    flex-direction: column;
-  }
-
-  .split {
-    width: 100%;
-    height: auto;
-  }
-
-  .left {
-    padding: 20px;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .right {
-    padding: 20px;
-    align-items: flex-start;
-  }
-
-  .profile-image {
-    width: 80%;
-    max-width: 300px;
-    height: auto;
-    margin-top: 0;
-  }
-
-  .terminal-nav ul {
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-
-  .cmd-terminal {
-    max-width: 100%;
-  }
-
-  .brand {
-    position: static;
-    justify-content: center;
-    padding: 10px;
-  }
+  overflow-x: hidden;
 }
 
-
-/* Split Layout */
-.split {
-  width: 50%;
-  height: 100vh;
-}
-
-/* Left Side with Image */
-.left {
-  background-color: #f0f0f0;
+/* Container wraps both splits */
+.container {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
+  height: 100vh;
+  flex-direction: row;
 }
 
+/* Branding */
 .brand {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 10;
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 20px;
-  position: absolute;
-  top: 0;
-  left: 0;
 }
 
 .logo {
@@ -92,20 +40,31 @@ body {
 .brand-name {
   font-size: 18px;
   font-weight: bold;
-  color: #000; /* or #fff if on dark background */
-  font-family: Consolas, 'Courier New', monospace;
+  color: #000;
 }
 
+/* Split Layout */
+.split {
+  width: 50%;
+  height: 100%;
+}
+
+.left {
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
 
 .profile-image {
   max-width: 90%;
   max-height: 90%;
   border-radius: 12px;
   object-fit: cover;
-  margin-top: -40px; /* Adjust image position upward */
+  margin-top: -40px;
 }
 
-/* Right Side - CMD Style Terminal */
 .right {
   background-color: #000;
   color: #fff;
@@ -130,6 +89,7 @@ body {
   font-size: 14px;
   color: #fff;
   text-transform: lowercase;
+  flex-wrap: wrap;
 }
 
 .terminal-nav li {
@@ -141,7 +101,7 @@ body {
   color: #00ff00;
 }
 
-/* CMD Terminal Box */
+/* Terminal Box */
 .cmd-terminal {
   width: 100%;
   max-width: 700px;
@@ -151,13 +111,12 @@ body {
   font-size: 16px;
   line-height: 1.6;
   box-shadow: 0 0 20px rgba(0, 255, 0, 0.2);
-  margin-top: 40px;
+  margin-top: 60px;
   border-radius: 6px;
   overflow-y: auto;
   max-height: 80vh;
 }
 
-/* CMD Output Links */
 .cmd-terminal a {
   color: #ffffff;
   text-decoration: underline;
@@ -173,25 +132,11 @@ body {
   color: #00ff00;
 }
 
-.path-green {
-  color: #00ff00;
-}
-
-.path-cyan {
-  color: #00ffff;
-}
-
-.path-yellow {
-  color: #ffff00;
-}
-
-.path-magenta {
-  color: #ff00ff;
-}
-
-.path-gray {
-  color: #ccc;
-}
+.path-green { color: #00ff00; }
+.path-cyan { color: #00ffff; }
+.path-yellow { color: #ffff00; }
+.path-magenta { color: #ff00ff; }
+.path-gray { color: #ccc; }
 
 /* CMD Input Line */
 #cmd-input {
@@ -208,45 +153,65 @@ body {
 }
 
 @keyframes blink {
-  50% {
-    opacity: 0;
+  50% { opacity: 0; }
+}
+
+/* === Responsive: Mobile View === */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    height: auto;
   }
-}
 
-/* === Animated Square Section === */
-.demo-container {
-  width: 100%;
-  margin-top: 40px;
-}
+  .split {
+    width: 100%;
+    height: auto;
+  }
 
-.docs-demo {
-  position: relative;
-}
+  .left {
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+  }
 
-.large.centered.row,
-.small.centered.row {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 20px;
-}
+  .profile-image {
+    width: 90%;
+    max-width: 300px;
+    height: auto;
+    margin-top: 0;
+  }
 
-.col {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+  .right {
+    padding: 20px;
+    align-items: flex-start;
+  }
 
-.square {
-  width: 100px;
-  height: 100px;
-  background-color: #00ffff;
-  border-radius: 12px;
-  box-shadow: 0 0 20px rgba(0, 255, 255, 0.6);
-  transition: transform 0.3s ease;
-}
+  .cmd-terminal {
+    margin-top: 20px;
+    padding: 15px;
+    font-size: 14px;
+    max-height: none;
+  }
 
-.label {
-  color: #888;
-  font-size: 14px;
+  .terminal-nav ul {
+    gap: 10px;
+    justify-content: center;
+  }
+
+  .brand {
+    position: static;
+    padding: 15px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .logo {
+    width: 35px;
+    height: 35px;
+  }
+
+  .brand-name {
+    color: #000;
+    font-size: 16px;
+  }
 }

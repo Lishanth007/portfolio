@@ -11,41 +11,45 @@
 </head>
 
 <body>
-  <!-- ✅ Branding (Logo + Name) -->
-  <header class="brand">
-    <img src="logo.png" alt="Logo" class="logo" />
-    <span class="brand-name">Lishanth</span>
-  </header>
+  <div class="container">
+    <!-- Branding Header -->
+    <header class="brand">
+      <img src="logo.png" alt="Logo" class="logo" />
+      <span class="brand-name">Lishanth</span>
+    </header>
 
-  <div class="split left">
-    <img src="img.jpg" alt="Lishanth's photo" class="profile-image" />
-  </div>
+    <!-- Left Split (Image) -->
+    <div class="split left">
+      <img src="img.jpg" alt="Lishanth's photo" class="profile-image" />
+    </div>
 
-  <div class="split right">
-    <nav class="terminal-nav">
-      <ul id="menu">
-        <li>home</li>
-        <li>intro</li>
-        <li>about</li>
-        <li>contact</li>
-        <li>projects</li>
-        <li>clear</li>
-        <li>help</li>
-      </ul>
-    </nav>
+    <!-- Right Split (CMD Terminal) -->
+    <div class="split right">
+      <nav class="terminal-nav">
+        <ul id="menu">
+          <li>home</li>
+          <li>intro</li>
+          <li>about</li>
+          <li>contact</li>
+          <li>projects</li>
+          <li>clear</li>
+          <li>help</li>
+        </ul>
+      </nav>
 
-    <div class="cmd-terminal">
-      <p>Welcome to <span class="highlight">Lishanth's</span> Portfolio [Version 2.0]</p>
-      <p>Please select or type an option from the menu above.</p>
-      <br />
-      <p id="prompt">
-        <span class="path-green">C:</span>\
-        <span class="path-cyan">portfolio</span>\
-        <span class="path-yellow">Users</span>\
-        <span class="path-magenta">lishanth</span>
-        <span class="path-gray">></span>
-        <span id="cmd-input" contenteditable="true"></span>
-      </p>
+      <div class="cmd-terminal">
+        <p>Welcome to <span class="highlight">Lishanth's</span> Portfolio [Version 2.0]</p>
+        <p>Please select or type an option from the menu above.</p>
+        <br />
+        <p id="prompt">
+          <span class="path-green">C:</span>\
+          <span class="path-cyan">portfolio</span>\
+          <span class="path-yellow">Users</span>\
+          <span class="path-magenta">lishanth</span>
+          <span class="path-gray">></span>
+          <span id="cmd-input" contenteditable="true" class="blinking-cursor"></span>
+        </p>
+      </div>
     </div>
   </div>
 </body>
