@@ -3,15 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Windows CMD Style</title>
+  <title>Lishanth Portfolio ✨</title>
+  <link rel="icon" type="image/png" href="logo.png" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="style.css" />
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </head>
+
 <body>
+  <!-- ✅ Branding (Logo + Name) -->
+  <header class="brand">
+    <img src="logo.png" alt="Logo" class="logo" />
+    <span class="brand-name">Lishanth</span>
+  </header>
+
   <div class="split left">
-  <img src="img.jpg" alt="Lishanth's photo" class="profile-image" />
-</div>
+    <img src="img.jpg" alt="Lishanth's photo" class="profile-image" />
+  </div>
 
   <div class="split right">
     <nav class="terminal-nav">
@@ -25,18 +33,19 @@
         <li>help</li>
       </ul>
     </nav>
+
     <div class="cmd-terminal">
       <p>Welcome to <span class="highlight">Lishanth's</span> Portfolio [Version 2.0]</p>
       <p>Please select or type an option from the menu above.</p>
       <br />
       <p id="prompt">
-          <span class="path-green">C:</span>\
-          <span class="path-cyan">portfolio</span>\
-          <span class="path-yellow">Users</span>\
-          <span class="path-magenta">lishanth</span>
-          <span class="path-gray">></span>
-          <span id="cmd-input" contenteditable="true"></span>
-        </p>
+        <span class="path-green">C:</span>\
+        <span class="path-cyan">portfolio</span>\
+        <span class="path-yellow">Users</span>\
+        <span class="path-magenta">lishanth</span>
+        <span class="path-gray">></span>
+        <span id="cmd-input" contenteditable="true"></span>
+      </p>
     </div>
   </div>
 </body>
