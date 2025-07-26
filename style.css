@@ -1,0 +1,184 @@
+/* Reset and Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  font-family: Consolas, 'Courier New', monospace;
+  background-color: #000;
+}
+
+/* Split Layout */
+.split {
+  width: 50%;
+  height: 100vh;
+}
+
+/* Left Side with Image */
+.left {
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.profile-image {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 12px;
+  object-fit: cover;
+  margin-top: -40px; /* Adjust image position upward */
+}
+
+/* Right Side - CMD Style Terminal */
+.right {
+  background-color: #000;
+  color: #fff;
+  position: relative;
+  padding: 20px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Terminal Navigation Menu */
+.terminal-nav {
+  position: absolute;
+  top: 20px;
+  left: 30px;
+}
+
+.terminal-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  font-size: 14px;
+  color: #fff;
+  text-transform: lowercase;
+}
+
+.terminal-nav li {
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.terminal-nav li:hover {
+  color: #00ff00;
+}
+
+/* CMD Terminal Box */
+.cmd-terminal {
+  width: 100%;
+  max-width: 700px;
+  background-color: #000;
+  padding: 20px;
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 1.6;
+  box-shadow: 0 0 20px rgba(0, 255, 0, 0.2);
+  margin-top: 40px;
+  border-radius: 6px;
+  overflow-y: auto;
+  max-height: 80vh;
+}
+
+/* CMD Output Links */
+.cmd-terminal a {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.cmd-terminal a:hover {
+  color: #00ff00;
+}
+
+/* Prompt Styling */
+.highlight {
+  font-weight: bold;
+  color: #00ff00;
+}
+
+.path-green {
+  color: #00ff00;
+}
+
+.path-cyan {
+  color: #00ffff;
+}
+
+.path-yellow {
+  color: #ffff00;
+}
+
+.path-magenta {
+  color: #ff00ff;
+}
+
+.path-gray {
+  color: #ccc;
+}
+
+/* CMD Input Line */
+#cmd-input {
+  outline: none;
+  display: inline-block;
+  min-width: 10px;
+  white-space: pre;
+}
+
+/* Blinking Cursor */
+.blinking-cursor::after {
+  content: "_";
+  animation: blink 1s step-start infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* === Animated Square Section === */
+.demo-container {
+  width: 100%;
+  margin-top: 40px;
+}
+
+.docs-demo {
+  position: relative;
+}
+
+.large.centered.row,
+.small.centered.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.square {
+  width: 100px;
+  height: 100px;
+  background-color: #00ffff;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.6);
+  transition: transform 0.3s ease;
+}
+
+.label {
+  color: #888;
+  font-size: 14px;
+}
